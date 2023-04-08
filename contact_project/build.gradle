@@ -1,0 +1,36 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    testImplementation ('org.springframework.boot:spring-boot-starter-test'){
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    implementation 'org.xerial:sqlite-jdbc:3.41.0.1'
+    implementation 'org.hibernate.orm:hibernate-community-dialects:6.1.7.Final'
+    implementation 'com.github.gwenn:sqlite-dialect:0.1.2'
+    implementation 'org.hibernate:hibernate-entitymanager:5.6.15.Final'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+}
+
+test {
+    useJUnitPlatform()
+}
